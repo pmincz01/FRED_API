@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Chart</title>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+<body>
+  <div id="container" style="height: 400px;"></div>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script type="text/javascript">
+  $.getJSON('hcformatGDP.json', function(data){
+  console.log(data);
+
+  $('#container').highcharts({
+     chart: {
+    	type: 'column'
+  	},
+  	series: data,
+    xAxis: {
+      type: 'datetime'    // required, or the x axis is rendered as numbers
+    }
+  });
+  // we will do stuff with imported data here...
+});
+    // highcharts code goes here
+  </script>
+</body>
+</html>
